@@ -11,7 +11,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-    volumes:
-      - ./wwwroot:/app/wwwroot:ro  # Mount static files (optional)
+    #volumes:
+    #  - ./wwwroot:/app/wwwroot:ro  # Mount static files (optional)
     restart: unless-stopped
     container_name: live-streaming-server
