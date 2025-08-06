@@ -1,0 +1,6 @@
+@live_streaming_server_HostAddress = http://localhost:5007
+
+GET {{live_streaming_server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  live-streaming-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1935:1935"    # RTMP streaming port
+      - "8080:8080"    # HTTP/WebSocket port
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+    volumes:
+      - ./wwwroot:/app/wwwroot:ro  # Mount static files (optional)
+    restart: unless-stopped
+    container_name: live-streaming-server
